@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automated Mailer Tool - User Guide</title>
+</script>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background:transparent;
+      color: #333;
+    }
+    header {
+      background: #0078d7;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 { margin: 0; font-size: 2rem; }
+    nav {
+      background: #005a9e;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover { text-decoration: underline; }
+    .container { max-width: 900px; margin: auto; padding: 20px; }
+    section {
+      margin-bottom: 40px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h2 { color: #005a9e; }
+    ul { margin-left: 20px; }
+    footer {
+      background: #0078d7;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+    .note {
+      background: #e7f3fe;
+      border-left: 5px solid #2196F3;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Automated Mailer Tool</h1>
+    <p>Your smart assistant for bulk and personalized email sending</p>
+  </header>
+
+  <nav>
+    <a href="#intro">Introduction</a>
+    <a href="#features">Features</a>
+    <a href="#guide">How to Use</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
+  <div class="container">
+
+    <section id="intro">
+      <h2>📌 Introduction</h2>
+      <p>
+        The Automated Mailer Tool is a Windows desktop application built with Python (Tkinter + CustomTkinter). 
+        It allows you to send bulk emails easily using data from Excel files, dynamic placeholders, or external APIs. 
+        This guide will walk you through its features and how to use them effectively.
+      </p>
+    </section>
+
+    <section id="features">
+      <h2>✨ Features</h2>
+      <ul>
+        <li>🔑 <b>Login System</b> – Secures your access to the tool.</li>
+        <li>📧 <b>SMTP Settings</b> – Save your Gmail address and App Password (encrypted locally).</li>
+        <li>📂 <b>Group Send with Constant Data</b> – Send the same message to multiple recipients from an Excel file.</li>
+        <li>📝 <b>Group Send with Dynamic Data</b> – Personalize messages with Excel fields using placeholders like <code>{name}</code>.</li>
+        <li>🔗 <b>Group Send with API</b> – Fetch extra data (e.g., attendance status) from external APIs and send customized messages.</li>
+        <li>🌗 <b>Light & Dark Mode</b> – Toggle themes for a better user experience.</li>
+        <li>🛡 <b>Email Validation</b> – Verifies email addresses before sending.</li>
+        <li>📊 <b>Logs & Refresh</b> – Shows progress and results of sending, with option to clear logs anytime.</li>
+      </ul>
+    </section>
+
+    <section id="guide">
+      <h2>🛠 How to Use</h2>
+
+      <h3>1. Login</h3>
+      <p>Enter your credentials (default: <code>admin / password</code>) to access the dashboard.</p>
+
+      <h3>2. Setup SMTP</h3>
+      <p>Go to <b>SMTP Settings</b> and enter your Gmail and App Password. This is required for sending emails.</p>
+      <div class="note">Note: You must enable 2-Step Verification in Gmail and generate an App Password.</div>
+
+      <h3>3. Group Send with Constant Data</h3>
+      <p>
+        Upload an Excel file containing at least an <b>email</b> column. The same subject and message will be sent to all addresses.
+      </p>
+
+      <h3>4. Group Send with Dynamic Data</h3>
+      <p>
+        Upload an Excel file with columns like <b>name</b>, <b>email</b>, etc.  
+        In your message, use placeholders like:  
+        <code>Hello {name}, your ID is {student_id}</code>.  
+        The tool will replace them with real values for each recipient.
+      </p>
+
+      <h3>5. Group Send with API</h3>
+      <p>
+        Upload Excel with student IDs and emails. The tool will fetch extra details (like attendance) from an external API, 
+        and then send customized messages only to relevant users.
+      </p>
+
+      <h3>6. Logs & Refresh</h3>
+      <p>
+        Monitor sending progress in the log panel. After completion, click <b>Refresh</b> to clear logs for a new session.
+      </p>
+    </section>
+
+    <section id="faq">
+      <h2>❓ FAQ</h2>
+      <p><b>Q:</b> How do I enable Gmail App Password?<br>
+         <b>A:</b> Go to Google Account → Security → Enable 2-Step Verification → Generate App Password for Mail.</p>
+
+      <p><b>Q:</b> What Excel formats are supported?<br>
+         <b>A:</b> Standard <code>.xlsx</code> files. Ensure there is an <b>email</b> column.</p>
+
+      <p><b>Q:</b> What happens if an email is invalid?<br>
+         <b>A:</b> The tool validates addresses and will skip undeliverable ones.</p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Automated Mailer Tool | Developed in Python with ❤️ </p>
+    <p>Developed by: Jinka Muni Sai Yateesh | Contact:<a href="https://github.com/yateesh013" target="_blank">Github</a></p>
+  </footer>
+
+</body>
+</html>
